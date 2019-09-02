@@ -1,0 +1,10 @@
+import "Standard" as std;
+import "Unity";
+
+this.Behaviour.OnTriggerEnter = other => {
+	if (other.Tag == "Ground"){
+	    var splat = Unity.LoadGameObjectAt("Prefabs/Splat001", this.Rigidbody.PositionX, 0.01, this.Rigidbody.PositionY, 0, 0, 0);
+		this.Destroy();
+	}
+};
+
