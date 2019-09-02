@@ -1,0 +1,31 @@
+import "Array";
+
+var array = Array();
+
+array.Push(1);
+array.Push(2);
+array.Push(3);
+array.Push(4);
+array.Push(5);
+array.Push(6);
+array.Push(7);
+array.Push(8);
+array.Push(9);
+array.Push(10);
+
+var arr = Array();
+
+
+arr.Push(1);
+arr.Push(2);
+arr.Push(3);
+arr.Push(4);
+arr.Push(5);
+arr.Push(6);
+arr.Push(7);
+arr.Push(8);
+arr.Push(9);
+arr.Push(10);
+
+print Array.IsArray(arr);
+print Array.IsArray(0);

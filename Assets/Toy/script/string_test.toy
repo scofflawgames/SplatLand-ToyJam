@@ -1,0 +1,37 @@
+print "hello world"[0];
+print "hello world"[1:2:-1];
+
+var str = "Hello world";
+
+print str;
+
+print str[0];
+
+print str[0:4:-1];
+
+str[0:4] = "Goodnight";
+
+print str;
+
+print "-------------------------";
+
+str = "Hello world";
+
+print str.Length();
+print str.ToLower();
+print str.ToUpper();
+print str.Replace("world", "Kayne");
+print str.Trim("d");
+print str.IndexOf("ll");
+print str.LastIndexOf("ll");
+
+print "-------------------------";
+
+print "Hello world".Length();
+print "Hello world".ToLower();
+print "Hello world".ToUpper();
+print "Hello world".Replace( "world", "Kayne");
+print "Hello world".Trim("d");
+print "Hello world".IndexOf("ll");
+print "Hello world".LastIndexOf("ll");
+

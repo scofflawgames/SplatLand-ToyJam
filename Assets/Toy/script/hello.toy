@@ -1,0 +1,227 @@
+import "Standard" as std;
+import "Toy";
+
+assert(Toy.VersionGreater(0, 0, 0), "Bad Version");
+
+//print the fibonacci numbers
+const fibonacci = (n) => {
+	if (n <= 1) return n;
+	return fibonacci(n - 2) + fibonacci(n - 1);
+};
+
+for (var i = 0; i < 20; i++) {
+	print fibonacci(i);
+}
+
+for (var i = 0; i < 10; i++) ;
+
+var hello = () => {print "hello";};
+var identity = x => x;
+var empty = () => {};
+var call = cb => cb();
+var f = function () {};
+
+a => { print a; }("barfoo");
+
+hello();
+print identity("a");
+f();
+call(empty);
+call(hello);
+
+
+var makeCounter = function() {
+	var count = 0;
+	return () => {
+		return ++count;
+	};
+};
+
+var counter = makeCounter();
+
+print counter(); //1
+print counter(); //2
+print counter(); //3
+
+
+var str = "";
+
+for (var i = 0; i < 10; i++) {
+	str += "x";
+	print str;
+}
+
+print "-----TESTING ARRAY-----";
+import "Array";
+
+const array = Array();
+
+array.Push(1);
+array.Push(2);
+array.Push(3);
+array.Push(4);
+array.Push(5);
+array.Push(4);
+array.Push(3);
+array.Push(2);
+array.Push(1);
+
+print array;
+
+print array.Pop();
+
+print array;
+
+array.Unshift("Hello world");
+
+print array;
+
+print array.Shift();
+
+print array;
+print array.Length();
+
+array.Insert(1, "x");
+
+print array;
+
+array.Delete(1);
+
+print array;
+
+print array;
+array.Sort((a, b) => a - b); //NOTE: only works with number arrays
+print array;
+
+print array.ToString() + array.ToString();
+
+print std.Clock();
+
+for (var i = 0; i < 10; i++) {
+	std.RandomSeed(1.1);
+	print std.Random();
+}
+
+print "-----TESTING INDEXING-----";
+var arr = Array();
+
+arr.Push(1);
+arr.Push(2);
+arr.Push(3);
+arr.Push(4);
+arr.Push(5);
+
+print arr[::-2];
+
+print arr[1];
+print arr[1:3];
+print arr[1:3:-1];
+print arr[:];
+print arr[::-1];
+
+arr[2] = "hello world";
+
+print arr;
+
+arr[4] = Array();
+arr[4].Push("hello");
+arr[4].Push("world");
+arr[4].Push("foo");
+arr[4][1] = "bar";
+
+arr[4].Push(arr);
+arr[4].Push(arr);
+
+print arr;
+print arr[4].Length();
+print arr[4][4:4];
+
+array.Push(arr);
+
+print array;
+
+print "-----TESTING DEPTH-----";
+
+var depth = Array();
+
+for (var i = 0; i < 10; i++) {
+	depth.Push(Array());
+}
+
+depth[0] = depth;
+
+print depth[0][0][0][0][0][0][0]; //interesting...
+
+
+print "-----TESTING POSITION-----";
+
+var position = Array();
+
+position.Push(1);
+position.Push(2);
+position.Push(3);
+//position.Insert(4, 4);
+
+print position;
+
+//position.Delete(5);
+
+import "script/dictionary_test.toy" as Dict;
+
+//print Dict.dictionary["foobar"];
+
+print "-----TESTING BOOLEAN-----";
+
+print true;
+print false;
+
+//-----------------------------------------------------------------------------
+//TODO: function pipes |>, function cascading .., function concatenation + (cascading with a single variable-set)
+
+//pipes: |> (must have only one argument - DONE!)
+//	var val = 5 |> double |> increment; //val = 11
+
+//concatenation: f + g + h (concatenated functions don't have return values, and don't pipe)
+//	var log = x => { print x; };
+//	var process = x => ...;
+//	var postProcess = x => ...;
+//	var eventHook = x => ...;
+
+//	var f = log + process + postProcess + eventHook;
+//
+//	//no returns
+//	f("argument");
+
+//cascading: .. (not useful without classes - Won't Add)
+//	var str = "hello world";
+//	str.DoThingToString()
+//		..DoOtherThingToString()
+//		;
+
+
+//TODO: sanity check using assert, testing the language so far
+//TODO: split(str, char) //how? Into an array?
+//TODO: Format(string, args...) //array as an argument?
+
+//TODO: IO library
+//TODO: JSON library
+//TODO: foreach(var element in object) //foreach(var char in "string")
+//TODO: foreach(var index of object)
+//TODO: switch-case
+
+//TODO: in-game console
+//TODO: assert as a "Standard" function?
+//TODO: default arugments
+//TODO: rest/spread operator; Min(...) Max(...)
+//TODO: MAYBE initializer lists
+//TODO: MAYBE destructuring
+//TODO: MAYBE promises
+//TODO: MAYBE coroutines
+//TODO: MAYBE regex
+//TODO: MAYBE template strings
+//TODO: MAYBE namespaces
+//TODO: MAYBE break x;
+//TODO: MAYBE continue x;
+//TODO: How would I do generics?
+//TODO: automatic properties?
+

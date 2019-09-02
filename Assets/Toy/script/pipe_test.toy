@@ -1,0 +1,17 @@
+var double = x => x * 2;
+var increment = x => x + 1;
+
+var injection = () => {
+	return (x) => {
+		return x * x;
+	};
+};
+
+print 5 |> double |> increment |> injection() |> increment;
+
+//replace this:
+print increment(double(increment(double(5)))); //23
+
+//with this:
+print 5 |> double |> increment |> double |> increment; //23
+

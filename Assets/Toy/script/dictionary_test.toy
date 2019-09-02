@@ -1,0 +1,30 @@
+import "Dictionary";
+
+var dict = Dictionary();
+
+dict.Insert("one", 1);
+dict.Insert("two", 2);
+dict.Insert("three", 3);
+dict.Insert("four", 4);
+dict.Insert("five", 5);
+dict.Insert("six", 6);
+dict.Insert("seven", 7);
+dict.Insert("eight", 8);
+dict.Insert("nine", 9);
+dict.Insert("ten", 10);
+
+var dict2 = Dictionary();
+
+dict2.Insert("one", 1);
+dict2.Insert("two", 2);
+dict2.Insert("three", 3);
+dict2.Insert("four", 4);
+dict2.Insert("five", 5);
+dict2.Insert("six", 6);
+dict2.Insert("seven", 7);
+dict2.Insert("eight", 8);
+dict2.Insert("nine", 9);
+dict2.Insert("ten", 10);
+
+print Dictionary.IsDictionary(dict);
+print Dictionary.IsDictionary(0);

@@ -1,0 +1,48 @@
+import "Standard" as std;
+
+print std.ToString(false);
+print std.ToString(42);
+print std.ToString("hello world");
+print std.ToString(null);
+
+print std.ToBoolean("false");
+print std.ToBoolean(0);
+print std.ToBoolean("hello world");
+
+print std.ToNumber("42");
+print std.ToNumber("42.0");
+print std.ToNumber("42.1");
+print std.ToNumber(false);
+
+print "-------------------------";
+
+import "Array";
+
+var array = Array();
+var arr = Array();
+
+print std.IsSame(array, array);
+print std.IsSame(array, arr);
+
+
+print "-------------------------";
+
+import "script/dictionary_test.toy" as Dict;
+
+print "-------------------------";
+
+import "Standard";
+
+print GetType(0);
+print GetType("Hello world");
+print GetType(false);
+print GetType(x => x);
+print GetType(null);
+print GetType(Dict);
+print GetType(Array);
+print GetType(Array());
+
+print "-------------------------";
+
+print IsSame(Clock, std.Clock);
+print Dict;

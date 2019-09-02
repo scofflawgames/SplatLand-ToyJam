@@ -1,0 +1,6 @@
+import "Standard";
+import "Globals";
+
+this.Behaviour.Start = () => {
+	this.TextMesh.SetText("Toy is working with Text Mesh Pro!!!");
+};

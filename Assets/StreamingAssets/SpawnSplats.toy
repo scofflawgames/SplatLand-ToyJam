@@ -1,0 +1,10 @@
+import "Standard" as std;
+import "Math";
+import "Array";
+import "Dictionary";
+import "Unity";
+import "Globals";
+
+this.Behaviour.Start = () => {
+		var splat = Unity.LoadGameObjectAt("Prefabs/Splat001", 0, 0.01, -5, 0, 0, 0);
+};

@@ -1,0 +1,90 @@
+print "WARNING: Math library testing is incomplete";
+
+import "Math";
+
+//constants
+assert(Math.PI == 3.14159265358979);
+assert(Math.E == 2.71828182845905);
+
+//Abs
+assert(Math.Abs(1) == 1);
+assert(Math.Abs(12.3) == 12.3);
+assert(Math.Abs(-1) == 1);
+assert(Math.Abs(-12.3) == 12.3);
+assert(Math.Abs(0) == 0);
+
+//Floor
+assert(Math.Floor(1) == 1);
+assert(Math.Floor(12.3) == 12);
+assert(Math.Floor(0) == 0);
+
+//Ceil
+assert(Math.Ceil(1) == 1);
+assert(Math.Ceil(12.3) == 13);
+assert(Math.Ceil(0) == 0);
+
+//Round
+assert(Math.Round(1) == 1);
+assert(Math.Round(12.3) == 12);
+assert(Math.Round(78.9) == 79);
+assert(Math.Round(0) == 0);
+
+//Pow
+assert(Math.Pow(2, 2) == 4);
+assert(Math.Pow(5, 5) == 3125);
+assert(Math.Pow(1, 0) == 1);
+assert(Math.Pow(0, 1) == 0);
+
+//Root
+assert(Math.Root(4, 2) == 2);
+//assert(Math.Root(3125, 5) == 5);
+assert(Math.Root(1, 1) == 1);
+assert(Math.Root(0, 1) == 0);
+
+//Log
+//assert(Math.Log(10) == 2.30258509299405);
+//assert(Math.Log(100) == 4.60517018598809);
+//assert(Math.Log(42) == 3.73766961828337);
+
+//Exp
+//assert(Math.Exp(10) == 22026.4657948067);
+assert(Math.Exp(0) == 1);
+
+//Sin
+assert(Math.Sin(Math.PI / 180 * 90) == 1);
+
+//Cos
+//
+
+//Tan
+//
+
+//Asin
+//
+
+//Acos
+//
+
+//Atan
+//
+
+//Sinh
+
+//Cosh
+//
+
+//Tanh
+//
+
+//Asinh
+//
+
+//Acosh
+//
+
+//Atanh
+//
+
+//TODO: more
+
+print "Math library assertion was successful";

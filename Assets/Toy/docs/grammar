@@ -1,0 +1,86 @@
+program -> delcaration* EOF ;
+
+declaration -> varDecl | constDecl | statement;
+
+varDecl -> "var" IDENTIFIER ( "=" expression )? ";" ;
+
+constDecl -> "const" IDENTIFIER "=" expression ";" ;
+
+statement ->
+	  printStmt
+	| ifStmt
+	| DoStmt
+	| whileStmt
+	| forStmt
+	| breakStmt
+	| continueStmt
+	| returnStmt
+	| assertStmt
+	| importStmt
+	| block
+	| ";"
+	| exprStmt
+	;
+
+printStmt -> "print" expression ";" ;
+
+importStmt -> "import" STRING ( "as" IDENTIFIER )? ";" ;
+
+ifStmt -> "if" "(" expression ")" statement ( "else" statement )? ;
+
+DoStmt -> "do" statement "while" "(" expression ")" ";" ;
+
+whileStmt -> "while" "(" expression ")" statement ;
+
+forStmt -> "for" "(" ( varDecl | exprStmt | ";") expression? ";" expression ")" statement ;
+
+breakStmt -> "break" ";" ;
+
+continueStmt -> "continue" ";" ;
+
+returnStmt -> "return" expression? ";" ;
+
+assertStmt -> "assert" "(" expression ( "," expression )? ")" ";" ;
+
+block -> "{" delcaration* "}" ;
+
+exprStmt -> expression ";" ;
+
+expression -> assignment ;
+
+assignment -> IDENTIFIER ( "[" primary "]" )* ( "=" | "+=" | "-=" | "*=" | "/=" | "%=" ) expression | ternary ;
+
+ternary -> or ( "?" expression ":" expression )? ;
+
+or -> and ( "||" or )* ;
+
+and -> equality ( "&&" and )* ;
+
+equality -> equality ( ("==" | "!=" ) comparison )* | comparison ;
+
+comparison -> comparison ( ( ">" | ">=" | "<" | "<=" ) addition )* | addition ;
+
+addition -> addition ( ( "-" "+" ) multiplication )* | multiplication ;
+
+multiplication -> unary ( ( "*" | "/" | "%" ) unary )* ;
+
+unary -> ( "!" | "-" ) unary | prefix ;
+
+prefix -> ( "++" | "--" ) IDENTIFIER | postfix ;
+
+postfix -> IDENTIFIER ( "++" | "--" ) | call ;
+
+call -> primary ( "(" arguments? ")" | "[" slice "]" | "." IDENTIFIER | "|>" primary )* ;
+
+arguments -> expression ( "," expression )* ;
+
+slice -> primary | primary? ":" primary? ( ":" primary )? ;
+
+primary -> "true" | "false" | "null" | NUMBER | STRING | IDENTIFIER | PLUGIN | function | "(" expression ")" ;
+
+function -> "function" "(" parameters? ")" block | ( "(" parameters ")" | IDENTIFIER ) "=>" ( expression | block ) ;
+
+parameters -> IDENTIFIER ( "," IDENTIFIER )* ;
+
+-------------------------------------------------------------------------------
+
