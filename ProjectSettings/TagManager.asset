@@ -16,6 +16,8 @@ TagManager:
   - RightBox
   - RedPaintBall
   - SoundManager
+  - BlueWall
+  - RedWall
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 

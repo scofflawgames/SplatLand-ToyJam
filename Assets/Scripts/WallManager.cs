@@ -9,6 +9,7 @@ public class WallManager : MonoBehaviour
     public GameObject blueWall;
     public GameObject redWall;
 
+    private bool wallCounted = false;
     void Start()
     {
         
@@ -26,18 +27,30 @@ public class WallManager : MonoBehaviour
         }
 
         //wallHP -= damageAmount;
-        if (blueHP == 0)
+        if (blueHP == 0 && !wallCounted)
         {
             //print("Block is blue!!");
             Instantiate(blueWall, transform.position, transform.rotation);
-            Destroy(gameObject, 0.15f);
+            if (!wallCounted)
+            {
+                WallCount wallCount = GetComponentInParent<WallCount>();
+                wallCount.removeWall();
+                wallCounted = true;
+            }
+            Destroy(gameObject);
             //broadcast message to all children to delete all of their children and turn to specific color
         }
-        else if (redHP == 0)
+        else if (redHP == 0 && !wallCounted)
         {
             //print("Block is red!!");
             Instantiate(redWall, transform.position, transform.rotation);
-            Destroy(gameObject, 0.15f);
+            if (!wallCounted)
+            {
+                WallCount wallCount = GetComponentInParent<WallCount>();
+                wallCount.removeWall();
+                wallCounted = true;
+            }
+            Destroy(gameObject);
         }
     }
 }
