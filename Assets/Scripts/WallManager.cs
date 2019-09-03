@@ -28,14 +28,14 @@ public class WallManager : MonoBehaviour
         //wallHP -= damageAmount;
         if (blueHP == 0)
         {
-            print("Block is blue!!");
+            //print("Block is blue!!");
             Instantiate(blueWall, transform.position, transform.rotation);
             Destroy(gameObject, 0.15f);
             //broadcast message to all children to delete all of their children and turn to specific color
         }
         else if (redHP == 0)
         {
-            print("Block is red!!");
+            //print("Block is red!!");
             Instantiate(redWall, transform.position, transform.rotation);
             Destroy(gameObject, 0.15f);
         }

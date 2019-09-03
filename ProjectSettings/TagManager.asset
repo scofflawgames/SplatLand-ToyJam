@@ -15,6 +15,7 @@ TagManager:
   - LeftBox
   - RightBox
   - RedPaintBall
+  - SoundManager
   layers:
   - Default
   - TransparentFX

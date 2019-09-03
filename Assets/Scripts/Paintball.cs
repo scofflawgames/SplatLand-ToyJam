@@ -37,7 +37,10 @@ public class Paintball : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         FindClosestSplat();
-        specificSplat.transform.parent = collision.gameObject.transform;
+        if (specificSplat != null)
+        {
+            specificSplat.transform.parent = collision.gameObject.transform;
+        }
     }
 
     public GameObject FindClosestSplat()

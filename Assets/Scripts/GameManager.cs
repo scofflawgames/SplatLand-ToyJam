@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void UnPauseGame()
     {
-        PlayerFPSController.current.enabled = false;
+        PlayerFPSController.current.enabled = true;
         pauseMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1;
