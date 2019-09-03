@@ -1,9 +1,28 @@
 import "Standard" as std;
 import "Unity";
 
-this.Behaviour.OnTriggerEnter = other => {
+var destroyFlag = false;
+
+this.Behaviour.OnCollisionEnter = other => {
+
 	if (other.Tag == "Ground"){
-	    var splat = Unity.LoadGameObjectAt("Prefabs/Splat001", this.Rigidbody.PositionX, 0.01, this.Rigidbody.PositionY, 0, 0, 0);
+	    Unity.LoadGameObjectAt("Prefabs/Splat001", this.Rigidbody.PositionX, 0.01, this.Rigidbody.PositionZ, 0, 0, 0);
+	}
+	else if(other.Tag == "WallSouth")
+	{
+		Unity.LoadGameObjectAt("Prefabs/Splat001", this.Rigidbody.PositionX, this.Rigidbody.PositionY, this.Rigidbody.PositionZ + 0.2, -90, 0, 0);
+	}
+	else if(other.Tag == "WallNorth")
+	{
+		Unity.LoadGameObjectAt("Prefabs/Splat001", this.Rigidbody.PositionX, this.Rigidbody.PositionY, this.Rigidbody.PositionZ - 0.2, 90, 0, 0);
+	}
+
+	//destroyFlag = true;	d
+};
+
+this.Behaviour.FixedUpdate = () =>{
+	if(destroyFlag)
+	{
 		this.Destroy();
 	}
 };

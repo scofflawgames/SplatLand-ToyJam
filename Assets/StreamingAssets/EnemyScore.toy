@@ -1,0 +1,17 @@
+import "Standard";
+import "Globals";
+
+Globals["enemyScore"] = 0;
+var oldScore = 0;
+
+this.Behaviour.Start = () => {
+	this.TextMesh.SetText("Enemy Score: " + ToString( Globals["enemyScore"] ));
+};
+
+this.Behaviour.FixedUpdate = () => {
+	if (Globals["enemyScore"] != oldScore)
+	{
+	oldScore = Globals["enemyScore"];
+	this.TextMesh.SetText("Enemy Score: " + ToString( Globals["enemyScore"] ));
+}
+};

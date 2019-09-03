@@ -1,0 +1,17 @@
+import "Standard";
+import "Globals";
+
+Globals["score"] = 0;
+var oldScore = 0;
+
+this.Behaviour.Start = () => {
+	this.TextMesh.SetText("Player Score: " + ToString( Globals["score"] ));
+};
+
+this.Behaviour.FixedUpdate = () => {
+	if (Globals["score"] != oldScore)
+	{
+	oldScore = Globals["score"];
+	this.TextMesh.SetText("Player Score: " + ToString( Globals["score"] ));
+}
+};

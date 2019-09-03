@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Wall
+  - Splat
+  - WallSouth
+  - WallNorth
+  - WallEast
+  - WallWest
+  - BluePaintBall
+  - LeftBox
+  - RightBox
+  - RedPaintBall
   layers:
   - Default
   - TransparentFX

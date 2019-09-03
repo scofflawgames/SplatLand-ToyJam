@@ -1,0 +1,7 @@
+import "Standard";
+import "Globals";
+import "Math";
+
+this.Behaviour.Awake = () => {
+	Globals["enemyScore"] = Globals["enemyScore"] + 1;
+};
