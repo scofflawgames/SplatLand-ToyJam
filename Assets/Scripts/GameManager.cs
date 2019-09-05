@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public AudioClip explosionClip;
+    public AudioSource soundManagerSource;
 
     public static bool isPaused = false;
+    public static bool wallDestroyed = false;
+
+    private bool canPlaySound = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +35,13 @@ public class GameManager : MonoBehaviour
                 UnPauseGame();
             }
         }
+
+        if (wallDestroyed && canPlaySound)
+        {
+            canPlaySound = false;
+            soundManagerSource.PlayOneShot(explosionClip, 0.7f);
+        }
+
     }
 
     public void PauseGame()

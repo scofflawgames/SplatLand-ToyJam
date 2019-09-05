@@ -15,6 +15,14 @@ public class WallManager : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if (wallCounted)
+        {
+            GameManager.wallDestroyed = true;
+        }
+    }
+
     public void DamageWall(int damageAmount, string damageType)
     {
         if (damageType == "blue" && blueHP > 0)

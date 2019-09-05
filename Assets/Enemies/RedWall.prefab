@@ -102,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9173582081320614892}
   - component: {fileID: 7312919591800020712}
+  - component: {fileID: -7554036097103963590}
   m_Layer: 0
   m_Name: RedWall
   m_TagString: RedWall
@@ -141,6 +142,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toyScript: RedBlock
+--- !u!114 &-7554036097103963590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173582081320614895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f933fa0360c8a6f46ba4665a1cbf76ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeSize: 0.1
+  cubesInRow: 3
+  explosionForce: 75
+  explosionRadius: 4
+  explosionUpward: 0.2
+  explosionObj: {fileID: 6768348018803395772, guid: 0f0fbb4b8b48d604cb5c46f529c0a8c6,
+    type: 3}
 --- !u!1 &9173582081410836547
 GameObject:
   m_ObjectHideFlags: 0

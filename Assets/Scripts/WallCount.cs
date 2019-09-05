@@ -26,6 +26,7 @@ public class WallCount : MonoBehaviour
             {
                 Destroy(paintedWall);
             }
+            GameManager.wallDestroyed = true;
         }
     }
 

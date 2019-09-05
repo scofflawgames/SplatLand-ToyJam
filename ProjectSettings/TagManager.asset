@@ -18,6 +18,8 @@ TagManager:
   - SoundManager
   - BlueWall
   - RedWall
+  - BackBox
+  - FrontBox
   layers:
   - Default
   - TransparentFX
