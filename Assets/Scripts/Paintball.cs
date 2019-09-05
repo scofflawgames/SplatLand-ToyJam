@@ -9,29 +9,7 @@ public class Paintball : MonoBehaviour
 
     private void Awake()
     {
-        //Fetch the Renderer from the GameObject
-        Renderer rend = GetComponent<Renderer>();
 
-        if (paintBallColor == "blue")
-        {
-            //Set the main Color of the Material to green
-            rend.material.shader = Shader.Find("_Color");
-            rend.material.SetColor("_Color", Color.blue);
-
-            //Find the Specular shader and change its Color to red
-            rend.material.shader = Shader.Find("Specular");
-            rend.material.SetColor("_SpecColor", Color.blue);
-        }
-        else if (paintBallColor == "red")
-        {
-            //Set the main Color of the Material to green
-            rend.material.shader = Shader.Find("_Color");
-            rend.material.SetColor("_Color", Color.red);
-
-            //Find the Specular shader and change its Color to red
-            rend.material.shader = Shader.Find("Specular");
-            rend.material.SetColor("_SpecColor", Color.red);
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
